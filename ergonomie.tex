@@ -8,6 +8,12 @@
 \usetheme{Copenhagen}
 \addtobeamertemplate{footline}{\insertframenumber/\inserttotalframenumber}
 
+%% This thing is to have colored pros and cons.
+%% http://tex.stackexchange.com/questions/14319/beamer-change-individual-bullet-color-for-pros-and-cons-list
+\useinnertheme{circles}
+\newenvironment{proenv}{\only{\setbeamercolor{local structure}{fg=green}}}{}
+\newenvironment{conenv}{\only{\setbeamercolor{local structure}{fg=red}}}{}
+
 
 \author {$\{CSI\} \setminus \{\text{Laurent Senta}\}$}
 \date\today
@@ -54,18 +60,19 @@
 \begin{frame}{Conclusion}
   \begin{block}{Points négatifs}
     \begin{itemize}
-    \item Trop d'informations,
-    \item Facile de ne pas voir qu'il y a eu un résultat,
-    \item Les erreurs ne sont pas assez adaptées à un non-initié.
+    \item<con@1-> Trop d'informations,
+    \item<con@1-> Facile de ne pas voir qu'il y a eu un résultat,
+    \item<con@1-> Les erreurs ne sont pas assez adaptées à un non-initié.
     \end{itemize}
   \end{block}
 
   \begin{block}{Points positifs}
     \begin{itemize}
-    \item Options par défaut très bonnes.
-    \item Possibilité de ne conserver que les informations importantes.
-    \item Rappels de la syntaxe.
-    \item Possibilité d'avoir la sortie ``dot''.
+    \item<pro@1-> Options par défaut très bonnes.
+    \item<pro@1-> Possibilité de ne conserver que les informations
+      importantes.
+    \item<pro@1-> Rappels de la syntaxe.
+    \item<pro@1-> Possibilité d'avoir la sortie ``dot''.
     \end{itemize}
   \end{block}
 \end{frame}
